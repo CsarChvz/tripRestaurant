@@ -1,14 +1,14 @@
 import { Center, NativeBaseProvider, Text } from "native-base";
 import React from "react";
 
-function MyAccount() {
+function Register() {
   return (
     <NativeBaseProvider>
       <Center>
-        <Text>MyAccount</Text>
+        <Text>Register</Text>
       </Center>
     </NativeBaseProvider>
   );
 }
 
-export default MyAccount;
+export default Register;

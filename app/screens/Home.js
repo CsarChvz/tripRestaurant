@@ -4,7 +4,7 @@ import React from "react";
 function Home() {
   return (
     <NativeBaseProvider>
-      <Center>
+      <Center padding={10}>
         <Text>Home</Text>
       </Center>
     </NativeBaseProvider>

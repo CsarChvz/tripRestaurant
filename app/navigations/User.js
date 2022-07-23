@@ -9,10 +9,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeScreen, SearchScreen, TopFiveScreen } from "./app/screens";
 import { AntDesign } from "@expo/vector-icons";
 import MyAccountScreen from "./app/screens/MyAccountStack/MyAccount";
-
-import AccountNavigator from "./app/stacks/AccountStack";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
 const TabNavigator = () => {
   return (
     // Navegador del tabuladir
@@ -51,7 +50,7 @@ const TabNavigator = () => {
       />
       <Tab.Screen
         name="MyAccount"
-        component={AccountNavigator}
+        component={MyAccountScreen}
         options={{
           tabBarIcon: () => <AntDesign name="user" size={24} color="black" />,
         }}
