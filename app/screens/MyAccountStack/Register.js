@@ -37,33 +37,61 @@ function Register() {
           }}
           validationSchema={validationSchema}
         >
-          {({ handleChange, handleSubmit, values, errors }) => (
+          {({
+            handleChange,
+            handleSubmit,
+            values,
+            errors,
+            setFieldTouched,
+            touched,
+          }) => (
             <>
               <Container>
+                {/* Nombre */}
                 <Text>Name</Text>
                 <Input
                   onChangeText={handleChange("name")}
                   placeholder={"name"}
+                  onBlur={() => setFieldTouched("name")}
                 ></Input>
-                <Text style={{ color: "red" }}>{errors.name}</Text>
+                {touched.name && (
+                  <Text style={{ color: "red" }}>{errors.name}</Text>
+                )}
+
+                {/* Email */}
                 <Text>Email</Text>
                 <Input
                   onChangeText={handleChange("email")}
                   placeholder={"name"}
+                  onBlur={() => setFieldTouched("email")}
                 ></Input>
-                <Text style={{ color: "red" }}>{errors.email}</Text>
+                {touched.email && (
+                  <Text style={{ color: "red" }}>{errors.email}</Text>
+                )}
+
+                {/* Password */}
                 <Text>COntraseña</Text>
                 <Input
                   onChangeText={handleChange("password")}
                   placeholder={"name"}
+                  onBlur={() => setFieldTouched("password")}
                 ></Input>
-                <Text style={{ color: "red" }}>{errors.password}</Text>
+                {touched.password && (
+                  <Text style={{ color: "red" }}>{errors.password}</Text>
+                )}
+
+                {/* Confirm Password */}
                 <Text>Repetir COntraseña</Text>
                 <Input
                   onChangeText={handleChange("confirmPassword")}
                   placeholder={"name"}
+                  onBlur={() => setFieldTouched("confirmPassword")}
                 ></Input>
-                <Text style={{ color: "red" }}>{errors.confirmPassword}</Text>
+                {touched.confirmPassword && (
+                  <Text style={{ color: "red" }}>{errors.confirmPassword}</Text>
+                )}
+
+                {/* Submit */}
                 <Flex alignItems={"center"} justifyContent={"center"}>
                   <Button onPress={handleSubmit} success>
                     Register
