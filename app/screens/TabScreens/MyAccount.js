@@ -1,12 +1,15 @@
 import { Center, NativeBaseProvider, Text } from "native-base";
 import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 function MyAccount() {
   return (
     <NativeBaseProvider>
-      <Center padding={10}>
-        <Text>MyAccount</Text>
-      </Center>
+      <SafeAreaView>
+        <Center>
+          <Text>Account</Text>
+        </Center>
+      </SafeAreaView>
     </NativeBaseProvider>
   );
 }
