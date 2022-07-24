@@ -16,9 +16,6 @@ const validationSchema = Yup.object().shape({
   password: Yup.string()
     .min(6, "Must be at least 6 characters") // .required("Required")
     .required("Required"),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password"), null], "Passwords must match")
-    .required("Required"),
 });
 function Register() {
   return (
@@ -78,17 +75,6 @@ function Register() {
                 ></Input>
                 {touched.password && (
                   <Text style={{ color: "red" }}>{errors.password}</Text>
-                )}
-
-                {/* Confirm Password */}
-                <Text>Repetir COntraseña</Text>
-                <Input
-                  onChangeText={handleChange("confirmPassword")}
-                  placeholder={"name"}
-                  onBlur={() => setFieldTouched("confirmPassword")}
-                ></Input>
-                {touched.confirmPassword && (
-                  <Text style={{ color: "red" }}>{errors.confirmPassword}</Text>
                 )}
 
                 {/* Submit */}
