@@ -27,7 +27,6 @@ function Register() {
             name: "",
             email: "",
             password: "",
-            confirmPassword: "",
           }}
           onSubmit={(values) => {
             console.log(values);
